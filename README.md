@@ -1,6 +1,6 @@
 # UPX Patcher
 
-This project written in golang provides a tool to patch UPX-compressed binaries to prevent decompression by modifying the UPX header with a random string.
+This project written in golang provides a tool to patch UPX-compressed binaries to prevent decompression by modifying the UPX header with random data and much more.
 
 ## Features
 
@@ -36,3 +36,10 @@ go run main.go -f
 ![image](https://github.com/furax124/UPX_Patcher/blob/main/Preview.png)
 
 ![image](https://github.com/furax124/UPX_Patcher/blob/main/DIE.png)
+
+## Credit
+
+[UPX_Patcher](https://github.com/DosX-dev/UPX-Patcher) - thank you for your amazing project and the idea and code
+
+## Why ?
+I just wanna rewrite in golang and enhance it a little bit
