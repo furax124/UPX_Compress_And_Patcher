@@ -22,3 +22,5 @@ go run main.go -f
 ## Preview
 
 ![image](https://github.com/furax124/UPX_Patcher/blob/main/Preview.png)
+
+![image](https://github.com/furax124/UPX_Patcher/blob/main/DIE.png)
