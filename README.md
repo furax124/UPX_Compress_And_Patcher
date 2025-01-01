@@ -15,6 +15,9 @@ This project written in golang provides a tool to patch UPX-compressed binaries 
 ```bash
 go run main.go -f
 ```
+## Roadmap
+- [ ] Make a automatique process to automatically download the official UPX trough their release and compress the provided exe and patch it
+- [ ] Make a simple GUI
 
 ## Preview
 
