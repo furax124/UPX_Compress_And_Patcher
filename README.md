@@ -5,6 +5,7 @@ This project written in golang provides a tool to patch UPX-compressed binaries 
 ## Requirements
 
 - Go 1.23 or later
+- A Compressed EXE with UPX
 
 ## Usage
 - Make sure to modify the filepath in main.go
