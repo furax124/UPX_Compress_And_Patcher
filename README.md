@@ -25,7 +25,7 @@ This project written in golang provides a tool to patch UPX-compressed binaries 
 - To patch a UPX-compressed binary, run the following command:
 
 ```bash
-go run main.go -f
+go run main.go
 ```
 ## Roadmap
 - [ ] Make a automatic process to automatically download the official UPX trough their release and compress the provided exe and patch it
