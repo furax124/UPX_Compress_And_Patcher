@@ -11,7 +11,7 @@ This project written in golang provides a tool to compress with upx and patching
 - **Version Block Patching**: Finds and patches the UPX version block with random data.
 - **DOS Stub Message Replacement**: Replaces the standard DOS stub message with a random data.
 - **WinAPI Function Name Replacement**: Replaces specific WinAPI function names in the binary.
-- **Entry Point Patching**: Patches the entry point of the binary for both 32-bit and 64-bit executables.
+- **Entry Point Patching**: Patches the entry point of the binary for 64-bit executables.
 - **File Writing**: Writes the modified binary back to the file.
 - **Automatic Compressing and Patching**: Retrieve the latest version of UPX and compress the given EXE and patch it
 
