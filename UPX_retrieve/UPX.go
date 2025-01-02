@@ -106,9 +106,7 @@ func DownloadAndInstallUPX() error {
 
 func CompressWithUPX(filePath string) error {
 	fmt.Printf("[*] Compressing file %s with UPX\n", filePath)
-	cmd := exec.Command("./upx.exe", filePath)
-	err := cmd.Run()
-	if err != nil {
+	if err := exec.Command("./upx.exe", "-9", filePath).Run(); err != nil {
 		return fmt.Errorf("[-] failed to compress file with UPX: %v", err)
 	}
 
