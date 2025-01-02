@@ -24,7 +24,7 @@ func main() {
 
 	// Check if the file is a valid Windows executable
 	if !bytes.Equal(data[:2], []byte{0x4D, 0x5A}) {
-		log.Fatal("[+] It doesn't look like a valid Windows executable.")
+		log.Fatal("[-] It doesn't look like a valid Windows executable.")
 	}
 
 	upxHeader := []byte("UPX!")
