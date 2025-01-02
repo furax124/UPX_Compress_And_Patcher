@@ -29,6 +29,7 @@ go run main.go
 ```
 ## Roadmap
 - [X] Make a automatic process to automatically download the official UPX trough their release and compress the provided exe and patch it
+- [ ] Fix compatibility with Garble Obfuscation
 
 ## Preview
 
