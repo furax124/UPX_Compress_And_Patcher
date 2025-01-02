@@ -9,7 +9,6 @@ This project written in golang provides a tool to compress with upx and patching
 - **Random String Generation**: Generates random strings to replace specific sections in the binary.
 - **Section Patching**: Patches various sections of the binary with random strings.
 - **Version Block Patching**: Finds and patches the UPX version block with random data.
-- **DOS Stub Message Replacement**: Replaces the standard DOS stub message with Custom Message.
 - **WinAPI Function Name Replacement**: Replaces specific WinAPI function names in the binary.
 - **Entry Point Patching**: Patches the entry point of the binary for 32-bit and 64-bit executables.
 - **File Writing**: Writes the modified binary back to the file.
