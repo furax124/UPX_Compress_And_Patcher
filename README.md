@@ -1,5 +1,5 @@
 ![image](https://github.com/user-attachments/assets/4537ef5d-35df-4b4e-8ea7-4f5103ff46e9)
-# UPX Compress and Patcher
+# UPX Compresser and Patcher
 
 This project written in golang provides a tool to compress with upx and patching a PE file to prevent decompression by modifying the UPX header with random data and much more.
 
