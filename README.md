@@ -30,8 +30,6 @@ go run main.go
 - [X] Make a automatic process to automatically download the official UPX trough their release and compress the provided exe and patch it
 - [X] Fix compatibility with Garble Obfuscation
       
-## Current Limitation
-- The outputed EXE need to have upx.exe to work (will fix it later)
 ## Screenshot Before and After
 - Before: 
 ![image](https://github.com/furax124/UPX_Patcher/blob/main/Assets/Before.png)
