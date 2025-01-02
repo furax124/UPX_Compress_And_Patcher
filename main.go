@@ -54,7 +54,7 @@ func main() {
 
 	log.Println("[*] Sections confusing...")
 
-	randomString := make([]byte, 4)
+	randomString := make([]byte, 5)
 	_, err = rand.Read(randomString)
 	if err != nil {
 		log.Fatalf("[-] Error generating random string: %v", err)
@@ -117,6 +117,7 @@ func patchBytes(data []byte, oldBytes, newBytes []byte) {
 		copy(data[index:index+len(newBytes)], newBytes)
 	} else {
 		log.Printf("[-] Pattern not found: %v", oldBytes)
+		log.Printf("[+] It may be a obfuscated file like GARBLE.")
 	}
 }
 
