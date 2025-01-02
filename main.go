@@ -82,15 +82,15 @@ func main() {
 	}
 
 	log.Println("[*] Replacing standard DOS Stub message...")
-	
+
 	patchBytes(data, []byte("[-] This program cannot be run in DOS mode."), []byte("This program has been Patched."))
 
 	log.Println("[*] WinAPI changing...")
-	
+
 	patchBytes(data, []byte("ExitProcess"), []byte("CopyContext"))
 
 	log.Println("[*] EntryPoint patching...")
-	
+
 	isBuild64 := is64Bit(data)
 	if isBuild64 {
 		patchBytes(data, []byte{0x53, 0x56, 0x57, 0x55}, []byte{0x53, 0x57, 0x56, 0x55})
@@ -110,11 +110,21 @@ func main() {
 func patchBytes(data []byte, oldBytes, newBytes []byte) {
 	index := bytes.Index(data, oldBytes)
 	if index != -1 {
+		if len(oldBytes) != len(newBytes) {
+			log.Fatalf("[-] Size mismatch: oldBytes length %d, newBytes length %d", len(oldBytes), len(newBytes))
+		}
+		log.Printf("[*] Patching bytes at offset %d", index)
 		copy(data[index:index+len(newBytes)], newBytes)
+	} else {
+		log.Printf("[-] Pattern not found: %v", oldBytes)
 	}
 }
 
 func patchBytesByOffset(data []byte, offset int, newBytes []byte) {
+	if offset < 0 || offset+len(newBytes) > len(data) {
+		log.Fatalf("[-] Invalid offset: %d", offset)
+	}
+	log.Printf("[*] Patching bytes at offset %d", offset)
 	copy(data[offset:offset+len(newBytes)], newBytes)
 }
 
