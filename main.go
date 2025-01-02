@@ -8,6 +8,8 @@ import (
 	"io/ioutil"
 	"log"
 	"math/big"
+
+	"UPX_Patched/UPX_retrieve"
 )
 
 func main() {
@@ -28,15 +30,26 @@ func main() {
 	// Check if the file is packed with UPX
 	upxHeader := []byte("UPX!")
 	if !bytes.Contains(data, upxHeader) {
-		randomString := make([]byte, 4)
-		_, err = rand.Read(randomString)
+		// Download and install UPX
+		err := UPX_retrieve.DownloadAndInstallUPX()
 		if err != nil {
-			log.Fatalf("[-]  Error generating random string: %v", err)
+			log.Fatalf("[-] Error downloading and installing UPX: %v", err)
 		}
-		if bytes.Contains(data, randomString) {
-			log.Fatal("[+] This file already patched.")
-		} else {
-			log.Fatal("[-] This file is not packed with UPX.")
+
+		// Compress the file with UPX
+		err = UPX_retrieve.CompressWithUPX(filePath)
+		if err != nil {
+			log.Fatalf("[-] Error compressing file with UPX: %v", err)
+		}
+
+		// Re-read the binary file after compression
+		data, err = ioutil.ReadFile(filePath)
+		if err != nil {
+			log.Fatalf("[-] Error reading file after compression: %v", err)
+		}
+
+		if !bytes.Contains(data, upxHeader) {
+			log.Fatal("[-] This file has not been correctly packed with UPX.")
 		}
 	}
 
