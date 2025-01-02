@@ -53,7 +53,7 @@ func main() {
 		log.Fatalf("[-] Error generating random bytes: %v", err)
 	}
 
-	patchBytes(data, []byte("[-] This program cannot be run in DOS mode."), []byte(randomString(30)))
+	patchBytes(data, []byte("This program cannot be run in DOS mode."), []byte(randomString(30)))
 
 	patchBytes(data, []byte{0x55, 0x50, 0x58, 0x30, 0x00}, randomBytes)
 	patchBytes(data, []byte{0x55, 0x50, 0x58, 0x31, 0x00}, randomBytes)
