@@ -30,11 +30,19 @@ go run main.go
 - [X] Make a automatic process to automatically download the official UPX trough their release and compress the provided exe and patch it
 - [X] Fix compatibility with Garble Obfuscation
 
-## Preview
+## Screenshot Before and After
+- Before: 
+![image](https://github.com/furax124/UPX_Patcher/blob/main/Assets/Before.png)
 
-![image](https://github.com/furax124/UPX_Patcher/blob/main/Preview.png)
+![image](https://github.com/furax124/UPX_Patcher/blob/main/Assets/Before_DIE.png)
 
-![image](https://github.com/furax124/UPX_Patcher/blob/main/DIE.png)
+
+- After:
+![image](https://github.com/furax124/UPX_Patcher/blob/main/Assets/After1.png)
+
+![image](https://github.com/furax124/UPX_Patcher/blob/main/Assets/After_DIE.png)
+
+- You can see that after the patch the patched file is not considered as a modified UPX in DIE
 
 ## Credit
 
