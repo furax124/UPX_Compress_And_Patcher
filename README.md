@@ -19,7 +19,6 @@ This project written in golang provides a tool to compress with upx and patching
 
 - Go 1.23 or later
 - A PE file (exe)
-- 
 ## Usage
 - Make sure to modify the filepath in main.go
 
