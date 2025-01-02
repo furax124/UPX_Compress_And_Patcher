@@ -81,10 +81,6 @@ func main() {
 		log.Fatal("[-] Can't get UPX version block offset.")
 	}
 
-	log.Println("[*] Replacing standard DOS Stub message...")
-
-	patchBytes(data, []byte("[-] This program cannot be run in DOS mode."), []byte("This program has been Patched."))
-
 	log.Println("[*] WinAPI changing...")
 
 	patchBytes(data, []byte("ExitProcess"), []byte("CopyContext"))
