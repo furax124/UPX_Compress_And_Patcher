@@ -18,18 +18,18 @@ This project written in golang provides a tool to compress with upx and patching
 ## Requirements
 
 - Go 1.23 or later
-- A Compressed EXE with UPX
-
+- A PE file (exe)
+- 
 ## Usage
 - Make sure to modify the filepath in main.go
 
-- To patch a UPX-compressed binary, run the following command:
+- To compress and patch a PE file, run the following command:
 
 ```bash
 go run main.go
 ```
 ## Roadmap
-- [ ] Make a automatic process to automatically download the official UPX trough their release and compress the provided exe and patch it
+- [X] Make a automatic process to automatically download the official UPX trough their release and compress the provided exe and patch it
 - [ ] Make a simple GUI
 
 ## Preview
