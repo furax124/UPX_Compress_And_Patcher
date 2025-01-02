@@ -53,8 +53,6 @@ func main() {
 		log.Fatalf("[-] Error generating random bytes: %v", err)
 	}
 
-	patchBytes(data, []byte("This program cannot be run in DOS mode."), []byte(randomString(30)))
-
 	patchBytes(data, []byte{0x55, 0x50, 0x58, 0x30, 0x00}, randomBytes)
 	patchBytes(data, []byte{0x55, 0x50, 0x58, 0x31, 0x00}, randomBytes)
 	patchBytes(data, []byte{0x55, 0x50, 0x58, 0x32, 0x00}, randomBytes)
@@ -75,7 +73,7 @@ func main() {
 
 	log.Println("[*] Replacing standard DOS Stub message...")
 
-	patchBytes(data, []byte("[-] This program cannot be run in DOS mode."), []byte(randomString(30)))
+	patchBytes(data, []byte("This program cannot be run in DOS mode."), []byte(randomString(30)))
 
 	log.Println("[*] WinAPI changing...")
 
@@ -101,11 +99,11 @@ func patchEntryPoint(data []byte) {
 	}
 
 	fmt.Printf("[*] PE Header Offset: 0x%x\n", peHeaderOffset)
-	
+
 	if !bytes.Equal(data[peHeaderOffset:peHeaderOffset+4], []byte("PE\000\000")) {
 		log.Fatalf("[-] Invalid PE header signature.")
 	}
-	
+
 	entryPointOffset := peHeaderOffset + 0x28
 	if int(entryPointOffset+4) > len(data) {
 		log.Fatalf("[-] Entry point offset out of bounds: %d", entryPointOffset)
@@ -113,12 +111,12 @@ func patchEntryPoint(data []byte) {
 
 	entryPointRVA := binary.LittleEndian.Uint32(data[entryPointOffset:])
 	fmt.Printf("[*] Entry Point RVA: 0x%x\n", entryPointRVA)
-	
+
 	entryPoint := int(entryPointRVA)
 	if entryPoint+4 > len(data) {
 		log.Fatalf("[-] Entry point RVA out of bounds: %d", entryPoint)
 	}
-	
+
 	if is64Bit(data) {
 		patchBytes(data, []byte{0x53, 0x56, 0x57, 0x55}, []byte{0x53, 0x57, 0x56, 0x55})
 	} else {
