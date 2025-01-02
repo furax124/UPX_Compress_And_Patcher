@@ -38,7 +38,7 @@ go run main.go
 
 
 - After:
-![image](https://github.com/furax124/UPX_Patcher/blob/main/Assets/After1.png)
+![image](https://github.com/furax124/UPX_Patcher/blob/main/Assets/After.png)
 
 ![image](https://github.com/furax124/UPX_Patcher/blob/main/Assets/After_DIE.png)
 
