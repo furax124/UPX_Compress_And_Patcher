@@ -27,7 +27,6 @@ func main() {
 		log.Fatal("[+] It doesn't look like a valid Windows executable.")
 	}
 
-	// Check if the file is packed with UPX
 	upxHeader := []byte("UPX!")
 	if !bytes.Contains(data, upxHeader) {
 		// Download and install UPX
@@ -55,7 +54,7 @@ func main() {
 
 	log.Println("[*] Sections confusing...")
 
-	// Generate a random 4-byte string
+	
 	randomString := make([]byte, 4)
 	_, err = rand.Read(randomString)
 	if err != nil {
